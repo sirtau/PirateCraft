@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=1]
+
+[node name="HelpButton" type="Button"]
+margin_top = 82.0
+margin_right = 128.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.47
+theme = ExtResource( 1 )
+text = "HELP"
+__meta__ = {
+"_edit_use_anchors_": false
+}

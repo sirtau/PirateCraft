@@ -1,0 +1,177 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Player/Guybrush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/start-assets/tileset.png" type="Texture" id=2]
+[ext_resource path="res://Player/Largo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/background/background02.png" type="Texture" id=4]
+[ext_resource path="res://assets/background/background03_super_dark.png" type="Texture" id=5]
+[ext_resource path="res://assets/background/background_0.png" type="Texture" id=6]
+[ext_resource path="res://src/Entities/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/UI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Entities/CoinCluster.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Entities/Portal2D.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Levels/level3.tscn" type="PackedScene" id=11]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 80, 80, 0, 80, 80, 0 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "tileset.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 80, 80 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tileset.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 80, 80, 80 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 1250, 116 )
+tile_set = SubResource( 4 )
+cell_size = Vector2( 80, 80 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -65544, 0, 0, -65543, 0, 0, -7, 0, 0, -6, 0, 0, -65525, 0, 0, -65519, 0, 0, 65525, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65554, 0, 0, 196604, 1, 0, 131091, 0, 0, 196623, 0, 0, 196628, 0, 0, 196629, 1, 0, 196630, 0, 0, 262145, 0, 0, 262146, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262167, 0, 0, 393204, 0, 0, 393215, 0, 0, 327680, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 458740, 0, 0, 393225, 0, 0, 393226, 0, 0, 393242, 0, 0, 524276, 0, 0, 524277, 0, 0, 524278, 0, 0, 524279, 0, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 458754, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 589812, 0, 0, 589820, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524322, 0, 0, 655346, 0, 0, 655347, 0, 0, 655357, 0, 0, 655359, 0, 0, 589824, 0, 0, 589858, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655394, 0, 0, 655395, 0, 0, 720931, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786467, 0, 0, 917492, 0, 0, 917493, 0, 0, 917494, 0, 0, 851983, 0, 0, 852003, 0, 0, 917519, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 917537, 0, 0, 917538, 0, 0, 917539, 0, 0, 983055, 0, 0, 983056, 0, 0, 983070, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0 )
+
+[node name="Player" parent="TileMap" instance=ExtResource( 1 )]
+position = Vector2( -420.79, 358.106 )
+
+[node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
+position = Vector2( 0, -86.9346 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 1.0
+drag_margin_top = 0.1
+drag_margin_right = 1.0
+
+[node name="Largos" type="Node" parent="TileMap"]
+
+[node name="Largo" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 480.71, 562.535 )
+
+[node name="Largo4" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 1958.05, 609.189 )
+
+[node name="Largo2" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 2693.31, 355.108 )
+
+[node name="Largo5" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 3181.31, 617.108 )
+
+[node name="Largo3" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 2329.31, 35.1077 )
+
+[node name="Largo6" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 2773.31, 1301.11 )
+
+[node name="Largo7" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 3381.31, 985.108 )
+
+[node name="Largo8" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 539.312, 33.1077 )
+
+[node name="Largo9" parent="TileMap/Largos" instance=ExtResource( 3 )]
+position = Vector2( 935.312, 351.108 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 26, -212 )
+scale = Vector2( 7.18453, 7.18453 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 180 )
+region_filter_clip = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.2, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 656, 112 )
+scale = Vector2( 2.67926, 2.67926 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 5000, 270 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color( 0.666667, 0, 0, 1 )
+position = Vector2( -1228, 0 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 5 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 1649, -2 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 5 )
+
+[node name="Coin" parent="." instance=ExtResource( 7 )]
+position = Vector2( 844.177, 628.157 )
+
+[node name="CoinCluster" parent="." instance=ExtResource( 9 )]
+position = Vector2( 969.651, 656.189 )
+
+[node name="Portal2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2259.19, -9.245 )
+next_scene = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 8 )]
